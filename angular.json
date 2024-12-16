@@ -113,18 +113,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "buildTarget": "app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "buildTarget": "app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "buildTarget": "app:build"
           }
         },
         "test": {
@@ -234,23 +234,23 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-bulma:build",
             "sourceMap": {
               "scripts": true,
               "styles": true,
               "vendor": true
-            }
+            },
+            "buildTarget": "app-bulma:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-bulma:build:production"
+              "buildTarget": "app-bulma:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-bulma:build"
+            "buildTarget": "app-bulma:build"
           }
         },
         "test": {
@@ -360,23 +360,23 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-semantic:build",
             "sourceMap": {
               "scripts": true,
               "styles": true,
               "vendor": true
-            }
+            },
+            "buildTarget": "app-semantic:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-semantic:build:production"
+              "buildTarget": "app-semantic:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-semantic:build"
+            "buildTarget": "app-semantic:build"
           }
         },
         "test": {

@@ -75,9 +75,5 @@
     "typescript": "5.4.5"
   },
   "overrides": {
-    "@angular-devkit/build-angular": {
-      "webpack-dev-middleware": "~5.3.4"
-    },
-    "webpack": "5.91.0"
   }
 }

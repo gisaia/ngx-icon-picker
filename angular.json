@@ -58,12 +58,15 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app",
+            "outputPath": {
+              "base": "dist/app"
+            },
             "index": "projects/app/src/index.html",
-            "main": "projects/app/src/main.ts",
-            "polyfills": "projects/app/src/polyfills.ts",
+            "polyfills": [
+              "projects/app/src/polyfills.ts"
+            ],
             "tsConfig": "projects/app/tsconfig.app.json",
             "assets": [
               "projects/app/src/favicon.ico",
@@ -73,12 +76,11 @@
               "projects/app/src/styles.less"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "projects/app/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -93,8 +95,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -113,18 +113,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app:build"
+            "buildTarget": "app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app:build:production"
+              "buildTarget": "app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app:build"
+            "buildTarget": "app:build"
           }
         },
         "test": {
@@ -179,12 +179,15 @@
       "prefix": "app-bulma",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app-bulma",
+            "outputPath": {
+              "base": "dist/app-bulma"
+            },
             "index": "projects/app-bulma/src/index.html",
-            "main": "projects/app-bulma/src/main.ts",
-            "polyfills": "projects/app-bulma/src/polyfills.ts",
+            "polyfills": [
+              "projects/app-bulma/src/polyfills.ts"
+            ],
             "tsConfig": "projects/app-bulma/tsconfig.app.json",
             "assets": [
               "projects/app-bulma/src/favicon.ico",
@@ -194,12 +197,11 @@
               "projects/app-bulma/src/styles.less"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "projects/app-bulma/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -214,8 +216,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -234,23 +234,23 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-bulma:build",
             "sourceMap": {
               "scripts": true,
               "styles": true,
               "vendor": true
-            }
+            },
+            "buildTarget": "app-bulma:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-bulma:build:production"
+              "buildTarget": "app-bulma:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-bulma:build"
+            "buildTarget": "app-bulma:build"
           }
         },
         "test": {
@@ -305,12 +305,15 @@
       "prefix": "app-semantic",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app-semantic",
+            "outputPath": {
+              "base": "dist/app-semantic"
+            },
             "index": "projects/app-semantic/src/index.html",
-            "main": "projects/app-semantic/src/main.ts",
-            "polyfills": "projects/app-semantic/src/polyfills.ts",
+            "polyfills": [
+              "projects/app-semantic/src/polyfills.ts"
+            ],
             "tsConfig": "projects/app-semantic/tsconfig.app.json",
             "assets": [
               "projects/app-semantic/src/favicon.ico",
@@ -320,12 +323,11 @@
               "projects/app-semantic/src/styles.less"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "projects/app-semantic/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -340,8 +342,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -360,23 +360,23 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-semantic:build",
             "sourceMap": {
               "scripts": true,
               "styles": true,
               "vendor": true
-            }
+            },
+            "buildTarget": "app-semantic:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "app-semantic:build:production"
+              "buildTarget": "app-semantic:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app-semantic:build"
+            "buildTarget": "app-semantic:build"
           }
         },
         "test": {
@@ -420,5 +420,15 @@
       }
     }
   },
-  "defaultProject": "lib"
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }

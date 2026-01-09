@@ -1,14 +1,14 @@
-import {Injectable} from '@angular/core';
-import {Icon, IconType} from './icon';
-import {IconsPack} from './icons-pack';
-import {BootstrapIconsPack} from './pack/bootstrap-icons-pack';
-import {FontAwesome4IconsPack} from './pack/font-awesome4-icons-pack';
-import {FontAwesome5IconsPack} from './pack/font-awesome5-icons-pack';
-import {FontAwesome6IconsPack} from './pack/font-awesome6-icons-pack';
-import {MaterialIconsPack} from './pack/material-icons-pack';
+import { Injectable } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import {PrimeIconsPack} from './pack/prime-icons-pack';
+import { Icon, IconType } from './icon';
+import { IconsPack } from './icons-pack';
+import { BootstrapIconsPack } from './pack/bootstrap-icons-pack';
+import { FontAwesome4IconsPack } from './pack/font-awesome4-icons-pack';
+import { FontAwesome5IconsPack } from './pack/font-awesome5-icons-pack';
+import { FontAwesome6IconsPack } from './pack/font-awesome6-icons-pack';
+import { MaterialIconsPack } from './pack/material-icons-pack';
+import { PrimeIconsPack } from './pack/prime-icons-pack';
 
 @Injectable()
 export class IconPickerService {

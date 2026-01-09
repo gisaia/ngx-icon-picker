@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {UntypedFormControl, UntypedFormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.semantic.component.html',
-  styleUrls: ['./app.semantic.component.less']
+    selector: 'app-root',
+    templateUrl: './app.semantic.component.html',
+    styleUrls: ['./app.semantic.component.less'],
+    standalone: false
 })
 export class AppSemanticComponent implements OnInit {
   myFormGroup: UntypedFormGroup;

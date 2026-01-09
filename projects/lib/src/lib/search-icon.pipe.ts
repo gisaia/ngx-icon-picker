@@ -2,12 +2,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Icon } from './icon';
 
 @Pipe({
-  name: 'searchIcon'
+  name: 'searchIcon',
+  standalone: true
 })
-
 export class SearchIconPipe implements PipeTransform {
 
-  transform(value: Icon[], search: string): any {
+  public transform(value: Icon[], search: string): any {
     if (!search) {
       return value;
     }
@@ -32,7 +32,7 @@ export class SearchIconPipe implements PipeTransform {
     });
   }
 
-  clean(value: string): string {
+  public clean(value: string): string {
     return value.trim().toLowerCase();
   }
 }

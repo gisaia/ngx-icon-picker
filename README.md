@@ -315,14 +315,14 @@ Go in your project and type `npm install NGX_ICON_PICKER_PATCH` where **NGX_ICON
 
 The local build will be installed in your project.
 
-## Build the library for production
+## Release the library
 
-Edit version in package.json (root and lib).
-Duplicate the README.md files
+To release, create a npm token `TOKEN` that has write authorization on packages for the scope `@gisaia-team` and that bypasses 2FA.
+Then run the following commands:
 
 ```bash
+export NPM_TOKEN=TOKEN
 npm install
-ng lint
 npm run build-release
 npm run publish
 ```

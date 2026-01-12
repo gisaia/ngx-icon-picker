@@ -323,7 +323,7 @@ Duplicate the README.md files
 ```bash
 npm install
 ng lint
-npm run prepare
+npm run build-release
 npm run publish
 ```
 

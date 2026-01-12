@@ -4,8 +4,9 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
-  selector: 'app-modal-dialog',
-  templateUrl: './modal.dialog.html'
+    selector: 'app-modal-dialog',
+    templateUrl: './modal.dialog.html',
+    standalone: false
 })
 export class ModalDialogComponent implements OnInit {
   modalRef: BsModalRef;

@@ -48,9 +48,9 @@ Available inputs and output :
 
 [ipIconPack]                // Icon pack (Font Awesome / Bootstrap Glyphicon / Font Awesome5 / Material): 'fa', 'bs', 'fa5', 'mat', 'all' (default: ['bs', 'fa5']).
 [ipIconSize]                // Set the icon size in the selector (default: '16px')
-[ipIconVerticalPadding]     // Set the top and bottom padding (default: '6px') 
-[ipIconHorizontalPadding]   // Set the left and right button padding (default: '10px') 
-[ipKeepSearchFilter]        // The search filter keep the value to filter  (default: 'false')    
+[ipIconVerticalPadding]     // Set the top and bottom padding (default: '6px')
+[ipIconHorizontalPadding]   // Set the left and right button padding (default: '10px')
+[ipKeepSearchFilter]        // The search filter keep the value to filter  (default: 'false')
 
 [ipFallbackIcon]            // Is used when the icon is undefined (default: 'fas fa-user').
 [ipPosition]                // Dialog position: 'right', 'left', 'top', 'bottom' (default: 'right').
@@ -301,15 +301,15 @@ Source are availble in **projects/app-semantic**
 After cloning this repository and modify the source, to test this libary with a local build, you have to type :
 
 ```bash
-npm install 
+npm install
 npm run build
 ```
 
 The library will be build
 
-Go in your project and type `npm install NGX_ICON_PICKER_PATCH` where **NGX_ICON_PICKER_PATCH** is the ngx-icon-picker path repository (example: /git/ngx-icon-picker). 
+Go in your project and type `npm install NGX_ICON_PICKER_PATCH` where **NGX_ICON_PICKER_PATCH** is the ngx-icon-picker path repository (example: /git/ngx-icon-picker).
 
-The local build will be installed in your project. 
+The local build will be installed in your project.
 
 ## Build the library for production
 
@@ -319,7 +319,7 @@ Duplicate the README.md files
 ```bash
 npm install
 ng lint
-npm run prepare
+npm run build-release
 npm run publish
 ```
 

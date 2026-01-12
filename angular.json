@@ -38,6 +38,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
+            "eslintConfig": "eslint.config.mjs",
             "lintFilePatterns": [
               "projects/lib/**/*.ts",
               "projects/lib/**/*.html"
@@ -147,22 +148,11 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
+            "eslintConfig": "eslint.config.mjs",
             "lintFilePatterns": [
               "projects/app/**/*.ts",
               "projects/app/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app/e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app:serve:production"
-            }
           }
         }
       }
@@ -273,22 +263,11 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
+            "eslintConfig": "eslint.config.mjs",
             "lintFilePatterns": [
               "projects/app-bulma/**/*.ts",
               "projects/app-bulma/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-bulma/e2e/protractor.conf.js",
-            "devServerTarget": "app-bulma:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-bulma:serve:production"
-            }
           }
         }
       }
@@ -399,22 +378,11 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
+            "eslintConfig": "eslint.config.mjs",
             "lintFilePatterns": [
               "projects/app-semantic/**/*.ts",
               "projects/app-semantic/**/*.html"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/app-semantic/e2e/protractor.conf.js",
-            "devServerTarget": "app-semantic:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "app-semantic:serve:production"
-            }
           }
         }
       }
@@ -426,6 +394,30 @@
     },
     "@angular-eslint/schematics:library": {
       "setParserOptionsProject": true
+    },
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
     }
   },
   "cli": {

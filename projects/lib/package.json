@@ -6,8 +6,8 @@
   },
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^18.2.13",
-    "@angular/core": "^18.2.13",
+    "@angular/common": "^20.3.16",
+    "@angular/core": "^20.3.16",
     "@fortawesome/angular-fontawesome": "^0.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",

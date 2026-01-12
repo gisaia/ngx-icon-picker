@@ -1,13 +1,12 @@
-import {ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-
-import {IconPickerService} from './icon-picker.service';
-import {Icon, IconType} from './icon';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Icon, IconType } from './icon';
+import { IconPickerService } from './icon-picker.service';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'icon-picker',
   templateUrl: './icon-picker.component.html',
-  styleUrls: ['./icon-picker.component.scss']
+  styleUrls: ['./icon-picker.component.scss'],
+  standalone: false
 })
 
 export class IconPickerComponent implements OnInit {

@@ -17,52 +17,52 @@ import { IconPickerComponent } from './icon-picker.component';
   standalone: true
 })
 export class IconPickerDirective implements OnInit, OnChanges {
-  @Input() iconPicker: string;
-  @Input() ipPlaceHolder = 'Search icon...';
-  @Input() ipPosition = 'right';
-  @Input() ipFallbackIcon = 'fas fa-user';
-  @Input() ipHeight = 'auto';
-  @Input() ipMaxHeight = '200px';
-  @Input() ipWidth = '230px';
-  @Input() ipIconSize = '16px';
-  @Input() ipIconVerticalPadding = '6px'; // Top / Bottom
-  @Input() ipIconHorizontalPadding = '10px'; // Left / Right
-  @Input() ipIconPack = ['bs', 'fa5'];
-  @Input() ipKeepSearchFilter = 'false';
+  @Input() public iconPicker: string;
+  @Input() public ipPlaceHolder = 'Search icon...';
+  @Input() public ipPosition = 'right';
+  @Input() public ipFallbackIcon = 'fas fa-user';
+  @Input() public ipHeight = 'auto';
+  @Input() public ipMaxHeight = '200px';
+  @Input() public ipWidth = '230px';
+  @Input() public ipIconSize = '16px';
+  @Input() public ipIconVerticalPadding = '6px'; // Top / Bottom
+  @Input() public ipIconHorizontalPadding = '10px'; // Left / Right
+  @Input() public ipIconPack = ['bs', 'fa5'];
+  @Input() public ipKeepSearchFilter = 'false';
   // Default design with bootstrap
-  @Input() ipButtonStyleClass = 'btn btn-default';
-  @Input() ipDivSearchStyleClass = '';
-  @Input() ipInputSearchStyleClass = 'form-control input-sm';
+  @Input() public ipButtonStyleClass = 'btn btn-default';
+  @Input() public ipDivSearchStyleClass = '';
+  @Input() public ipInputSearchStyleClass = 'form-control input-sm';
 
-  @Output() iconPickerSelect = new EventEmitter<string>(true);
+  @Output() public iconPickerSelect = new EventEmitter<string>(true);
 
   private dialog: any;
   private created: boolean;
   private ignoreChanges = false;
 
-  constructor(
+  public constructor(
     private vcRef: ViewContainerRef,
     private el: ElementRef) {
     this.created = false;
   }
 
   @HostListener('click')
-  onClick() {
+  public onClick() {
     this.openDialog();
   }
 
-  ngOnChanges(changes: any): void {
+  public ngOnChanges(changes: any): void {
     if (changes.iconPicker) {
       this.ignoreChanges = false;
     }
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.iconPicker = this.iconPicker || this.ipFallbackIcon || 'fa fa-user-plus';
     this.iconPickerSelect.emit(this.iconPicker);
   }
 
-  openDialog() {
+  public openDialog() {
     if (!this.created) {
       this.created = true;
       const vcRef = this.vcRef;
@@ -81,7 +81,7 @@ export class IconPickerDirective implements OnInit, OnChanges {
     }
   }
 
-  iconSelected(icon: string) {
+  public iconSelected(icon: string) {
     this.iconPickerSelect.emit(icon);
   }
 

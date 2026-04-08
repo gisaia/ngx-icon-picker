@@ -1,16 +1,27 @@
+import { NgClass, NgStyle } from '@angular/common';
 import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Icon, IconType } from './icon';
 import { IconPickerService } from './icon-picker.service';
+import { SearchIconPipe } from './search-icon.pipe';
 
 @Component({
   selector: 'icon-picker',
   templateUrl: './icon-picker.component.html',
   styleUrls: ['./icon-picker.component.scss'],
-  standalone: false
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    NgStyle,
+    NgClass,
+    SearchIconPipe,
+    FontAwesomeModule
+  ]
 })
 
 export class IconPickerComponent implements OnInit {
-  @ViewChild('dialogPopup') dialogElement: any;
+  @ViewChild('dialogPopup') public dialogElement: any;
 
   // Popover
   public ipPosition: string;
@@ -42,8 +53,8 @@ export class IconPickerComponent implements OnInit {
   public buttonWidth: number;
   public buttonHeight: number;
 
-  icons: Icon[] = [];
-  search = '';
+  public icons: Icon[] = [];
+  public search = '';
 
   private directiveInstance: any;
   private initialIcon: string;
@@ -54,13 +65,13 @@ export class IconPickerComponent implements OnInit {
 
   private dialogArrowSize = 10;
 
-  constructor(
+  public constructor(
     private el: ElementRef,
     private cdr: ChangeDetectorRef,
     private service: IconPickerService) {
   }
 
-  setDialog(instance: any, elementRef: ElementRef, icon: string, ipPosition: string, ipHeight: string, ipMaxHeight: string,
+  public setDialog(instance: any, elementRef: ElementRef, icon: string, ipPosition: string, ipHeight: string, ipMaxHeight: string,
             ipWidth: string, ipPlaceHolder: string, ipFallbackIcon: string, ipIconPack: string[], ipIconSize: string,
             ipIconVerticalPadding: string, ipIconHorizontalPadding: string, ipButtonStyleClass: string, ipDivSearchStyleClass: string,
             ipInputSearchStyleClass: string, ipKeepSearchFilter: string) {
@@ -89,14 +100,14 @@ export class IconPickerComponent implements OnInit {
     this.buttonWidth = this.ipIconSize + 2 * this.ipIconHorizontalPadding;
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.icons = this.service.getIcons(this.ipIconPack);
     this.listenerMouseDown = (event: any) => this.onMouseDown(event);
     this.listenerResize = () => this.onResize();
     this.openDialog(this.initialIcon);
   }
 
-  setInitialIcon(icon: string) {
+  public setInitialIcon(icon: string) {
     this.initialIcon = icon;
     this.selectedIcon = this.icons.find(el => el ?
       `fa fa-${el.id}` === icon || `glyphicon glyphicon-${el.id}` === icon || `pi pi-${el.id}` === icon || `${el.id}` === icon :
@@ -109,16 +120,12 @@ export class IconPickerComponent implements OnInit {
     }
   }
 
-  openDialog(icon: string) {
+  public openDialog(icon: string) {
     this.setInitialIcon(icon);
     this.openIconPicker();
   }
 
-  setSearch(val: string) {
-    this.search = val;
-  }
-
-  selectIcon(icon: Icon): void {
+  public selectIcon(icon: Icon): void {
     if (icon.type === IconType.FontAwesome) {
       this.directiveInstance.iconSelected(`fa fa-${icon.id}`);
     } else if (icon.type === IconType.Bootstrap) {
@@ -135,13 +142,13 @@ export class IconPickerComponent implements OnInit {
     this.closeIconPicker();
   }
 
-  onMouseDown(event: any) {
+  public onMouseDown(event: any) {
     if (!this.isDescendant(this.el.nativeElement, event.target) && event.target !== this.directiveElementRef.nativeElement) {
       this.closeIconPicker();
     }
   }
 
-  openIconPicker() {
+  public openIconPicker() {
     if (!this.show) {
       this.show = true;
       this.hidden = true;
@@ -155,7 +162,7 @@ export class IconPickerComponent implements OnInit {
     }
   }
 
-  closeIconPicker() {
+  public closeIconPicker() {
     if (this.show) {
       this.show = false;
       document.removeEventListener('mousedown', this.listenerMouseDown);
@@ -164,13 +171,13 @@ export class IconPickerComponent implements OnInit {
     }
   }
 
-  onResize() {
+  public onResize() {
     if (this.position === 'fixed') {
       this.setDialogPosition();
     }
   }
 
-  setDialogPosition() {
+  public setDialogPosition() {
     const dialogHeight = this.dialogElement.nativeElement.offsetHeight;
     let node = this.directiveElementRef.nativeElement;
     let position = 'static';
@@ -221,7 +228,7 @@ export class IconPickerComponent implements OnInit {
     }
   }
 
-  isDescendant(parent: any, child: any): boolean {
+  public isDescendant(parent: any, child: any): boolean {
     let node: any = child.parentNode;
     while (node !== null) {
       if (node === parent) {
@@ -232,7 +239,7 @@ export class IconPickerComponent implements OnInit {
     return false;
   }
 
-  createBox(element: any, offset: boolean): any {
+  public createBox(element: any, offset: boolean): any {
     return {
       top: element.getBoundingClientRect().top + (offset ? window.pageYOffset : 0),
       left: element.getBoundingClientRect().left + (offset ? window.pageXOffset : 0),

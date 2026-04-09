@@ -5,14 +5,15 @@
     "url": "https://github.com/gisaia/ngx-icon-picker.git"
   },
   "author": "gisaia",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "private": false,
   "peerDependencies": {
-    "@angular/common": "^20.3.16",
-    "@angular/core": "^20.3.16",
+    "@angular/common": "^21.2.4",
+    "@angular/core": "^21.2.4",
+    "@angular/material": "^21.2.4",
     "@fortawesome/angular-fontawesome": "^0.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",

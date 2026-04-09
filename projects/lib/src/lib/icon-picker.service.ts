@@ -19,7 +19,7 @@ export class IconPickerService {
   private matIconsPack: IconsPack;
   private primeIconsPack: IconsPack;
 
-  constructor(protected faIconLibrary: FaIconLibrary) {
+  public constructor(protected faIconLibrary: FaIconLibrary) {
     this.bsIconPack = new BootstrapIconsPack();
     this.fa4IconsPack = new FontAwesome4IconsPack();
     this.fa5IconsPack = new FontAwesome5IconsPack();
@@ -28,7 +28,7 @@ export class IconPickerService {
     this.primeIconsPack = new PrimeIconsPack();
   }
 
-  getIcons(ipIconPacks: string[]): Icon[] {
+  public getIcons(ipIconPacks: string[]): Icon[] {
     const icons: Icon[] = [];
     ipIconPacks.forEach((ipIconPack) => {
       if (ipIconPack === 'fa' || ipIconPack === 'all') {

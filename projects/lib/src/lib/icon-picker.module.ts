@@ -5,21 +5,17 @@ import { IconPickerComponent } from './icon-picker.component';
 import { IconPickerDirective } from './icon-picker.directive';
 import { IconPickerService } from './icon-picker.service';
 import { SearchIconPipe } from './search-icon.pipe';
-import { TextDirective } from './text.directive';
 
 @NgModule({
     imports: [
         CommonModule,
         FontAwesomeModule,
         IconPickerDirective,
-        TextDirective,
-        SearchIconPipe
+        SearchIconPipe,
+        IconPickerComponent
     ],
     providers: [
         IconPickerService
-    ],
-    declarations: [
-        IconPickerComponent,
     ],
     exports: [
         IconPickerDirective

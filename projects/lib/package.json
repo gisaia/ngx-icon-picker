@@ -5,7 +5,7 @@
     "url": "https://github.com/gisaia/ngx-icon-picker.git"
   },
   "author": "gisaia",
-  "version": "21.0.0",
+  "version": "21.1.0",
   "dependencies": {
     "tslib": "^2.0.0"
   },

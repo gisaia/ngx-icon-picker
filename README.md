@@ -15,6 +15,28 @@ The icon Picker manages Font Awesome, Bootstrap Glyphicon, Font Awesome 5 (5.15.
 
 Fork from https://github.com/tech-advantage/ngx-icon-picker
 
+## Update icon list
+
+To update material icons list, parse the following file using the script below https://github.com/google/material-design-icons/blob/master/variablefont/MaterialSymbolsOutlined%5BFILL%2CGRAD%2Copsz%2Cwght%5D.codepoints
+
+```python
+import json
+
+icons = []
+
+with open("symbols.txt") as f:
+    for line in f.readlines():
+        icon = line.split(" ")[0]
+        icons.append({
+            "name": " ".join([x.capitalize() for x in icon.split("_")]),
+            "id": icon
+        })
+
+with open("parsed.json", "w") as f:
+    json.dump(icons, f, indent=2)
+
+```
+
 ## Installing and usage
 
 ```bash
